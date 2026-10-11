@@ -13,18 +13,17 @@ return new class extends Migration
     {
         Schema::create('tags', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->nullable(true)->constrained()->onDelete('cascade');
             $table->string('title', 50);
+            $table->string('description', 255)->nullable(true);
             $table->string('color', 7);
-            $table->timestamps();
         });
 
         Schema::create('personal_spent_goals_per_tag', function (Blueprint $table) {
+            $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('tag_id')->constrained()->onDelete('cascade');
             $table->integer('goal_percentage', false, true);
-
-            $table->primary(['user_id', 'tag_id']);
         });
     }
 
