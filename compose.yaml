@@ -64,6 +64,16 @@ services:
                 - ping
             retries: 3
             timeout: 5s
+    mailhog:
+        image: mailhog/mailhog:latest
+        logging:
+            driver: 'none'
+        ports:
+        - "1025:1025" # SMTP port to send.
+        - "8025:8025" # HTTP port to access web interface.
+        networks:
+            - sail
+
 networks:
     sail:
         driver: bridge
