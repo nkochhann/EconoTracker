@@ -35,13 +35,12 @@
 </DropdownMenuLabel>
 <DropdownMenuSeparator />
 <DropdownMenuGroup>
-    <DropdownMenuItem asChild>
-        {#snippet children(props)}
+    <DropdownMenuItem>
+        {#snippet child({ props })}
             <Link
-                class={props.class}
+                {...props}
                 href={toUrl(edit())}
                 prefetch
-                onclick={props.onClick}
             >
                 <Settings class="mr-2 h-4 w-4" />
                 Settings
@@ -50,13 +49,13 @@
     </DropdownMenuItem>
 </DropdownMenuGroup>
 <DropdownMenuSeparator />
-<DropdownMenuItem asChild>
-    {#snippet children(props)}
+<DropdownMenuItem>
+    {#snippet child({ props })}
         <Link
-            class={props.class}
+            {...props}
             href={logout()}
             as="button"
-            onclick={handleLogout(props.onClick)}
+            onclick={handleLogout(props.onclick as (() => void) | undefined)}
             data-test="logout-button"
         >
             <LogOut class="mr-2 h-4 w-4" />

@@ -53,12 +53,11 @@
     <SidebarHeader>
         <SidebarMenu>
             <SidebarMenuItem>
-                <SidebarMenuButton size="lg" asChild>
-                    {#snippet children(props)}
+                <SidebarMenuButton size="lg">
+                    {#snippet child({ props })}
                         <Link
                             {...props}
                             href={toUrl(dashboard())}
-                            class={props.class}
                         >
                             <AppLogo />
                         </Link>

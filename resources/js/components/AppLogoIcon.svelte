@@ -14,10 +14,44 @@
     class={className}
     {...rest}
 >
+    <circle
+        cx="20"
+        cy="21"
+        r="18"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+    />
+    <defs>
+        <mask id="econotracker-coin-mask">
+            <rect width="40" height="42" fill="white" />
+            <g
+                fill="none"
+                stroke="black"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <path
+                    d="M23 18.4C23 17.2 21.7 16.6 20 16.6C18.3 16.6 17 17.3 17 18.7C17 20.2 18.6 20.5 20 21C21.4 21.5 23 21.8 23 23.3C23 24.7 21.7 25.4 20 25.4C18.3 25.4 17 24.8 17 23.6"
+                />
+                <path d="M20 14.9V27.1" stroke-width="1.3" />
+            </g>
+        </mask>
+    </defs>
+    <path fill="currentColor" d="M20 5 23 10.2H17Z" />
     <path
+        d="M32.5 21H35M5 21H7.5M20 33.5V36"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+    />
+    <circle
+        cx="20"
+        cy="21"
+        r="8.5"
         fill="currentColor"
-        fill-rule="evenodd"
-        clip-rule="evenodd"
-        d="M17.2 5.633 8.6.855 0 5.633v26.51l16.2 9 16.2-9v-8.442l7.6-4.223V9.856l-8.6-4.777-8.6 4.777V18.3l-5.6 3.111V5.633ZM38 18.301l-5.6 3.11v-6.157l5.6-3.11V18.3Zm-1.06-7.856-5.54 3.078-5.54-3.079 5.54-3.078 5.54 3.079ZM24.8 18.3v-6.157l5.6 3.111v6.158L24.8 18.3Zm-1 1.732 5.54 3.078-13.14 7.302-5.54-3.078 13.14-7.3v-.002Zm-16.2 7.89 7.6 4.222V38.3L2 30.966V7.92l5.6 3.111v16.892ZM8.6 9.3 3.06 6.222 8.6 3.143l5.54 3.08L8.6 9.3Zm21.8 15.51-13.2 7.334V38.3l13.2-7.334v-6.156ZM9.6 11.034l5.6-3.11v14.6l-5.6 3.11v-14.6Z"
+        mask="url(#econotracker-coin-mask)"
     />
 </svg>

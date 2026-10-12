@@ -1,7 +1,12 @@
 <script lang="ts">
-	import { Select as SelectPrimitive } from "bits-ui";
+	import type { HTMLAttributes } from "svelte/elements";
+	import type { WithElementRef } from "@/lib/utils.js";
 
-	let { ref = $bindable(null), ...restProps }: SelectPrimitive.ValueProps = $props();
+	let {
+		ref = $bindable(null),
+		children,
+		...restProps
+	}: WithElementRef<HTMLAttributes<HTMLSpanElement>> = $props();
 </script>
 
-<SelectPrimitive.Value bind:ref data-slot="select-value" {...restProps} />
+<span bind:this={ref} data-slot="select-value" {...restProps}>{@render children?.()}</span>

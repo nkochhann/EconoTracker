@@ -1,9 +1,16 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import type { LinkComponentBaseProps } from "@inertiajs/core"
 
-// ESTA É A IMPLEMENTAÇÃO REAL DA FUNÇÃO CN: -> Resolvendo problema com shadcn-svelte
+// CN Function implementation: -> Solvin shadcn-svelte problem.
 export function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));
+}
+
+export function toUrl(
+    href: NonNullable<LinkComponentBaseProps["href"]>,
+): string {
+    return typeof href === "string" ? href : href.url;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

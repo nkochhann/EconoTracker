@@ -21,19 +21,9 @@
 	}}
 	{...restProps}
 >
-	{#snippet loadingIcon()}
-		<RiLoaderLine class="size-4 animate-spin" />
-	{/snippet}
-	{#snippet successIcon()}
-		<RiCheckboxCircleLine class="size-4" />
-	{/snippet}
-	{#snippet errorIcon()}
-		<RiErrorWarningLine class="size-4" />
-	{/snippet}
-	{#snippet infoIcon()}
-		<RiInformationLine class="size-4" />
-	{/snippet}
-	{#snippet warningIcon()}
-		<RiCloseCircleLine class="size-4" />
-	{/snippet}
+	<RiLoaderLine slot="loading-icon" class="size-4 animate-spin" />
+	<RiCheckboxCircleLine slot="success-icon" class="size-4" />
+	<RiErrorWarningLine slot="error-icon" class="size-4" />
+	<RiInformationLine slot="info-icon" class="size-4" />
+	<RiCloseCircleLine slot="warning-icon" class="size-4" />
 </Sonner>
