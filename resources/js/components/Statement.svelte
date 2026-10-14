@@ -1,6 +1,6 @@
 <script lang="ts">
-    import * as NavigationMenu from "@/components/ui/navigation-menu/index";
-    import Button from "@/components/ui/button/Button.svelte"
+    import Button from "@/components/ui/button/Button.svelte";
+    import StatementCard from "@/components/StatementCard.svelte";
 
     const selected = "flex-1 w-full bg-background text-primary border-b border-primary";
     const unselected = "flex-1 w-full bg-background text-primary";
@@ -8,7 +8,7 @@
     let selectedTab = $state("all");
 </script>
 
-<div class="w-full">
+<div class="w-full h-full">
     <div class="flex w-full">
         <!--All-->
         <Button 
@@ -36,5 +36,8 @@
         >
             Saídas
         </Button>
+    </div>
+    <div class="flex-row w-full h-full bg-background">
+        <StatementCard />
     </div>
 </div>
