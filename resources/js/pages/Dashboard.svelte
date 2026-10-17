@@ -15,6 +15,13 @@
     import AppHead from '@/components/AppHead.svelte';
     import PlaceholderPattern from '@/components/PlaceholderPattern.svelte';
     import Statement from '@/components/Statement.svelte';
+
+    const { transactions } = $props();
+
+    // Adicione esse efeito temporário para debugar no console do Google Chrome / Firefox
+    $effect(() => {
+        console.log("Dados recebidos do Laravel:", transactions);
+    });
 </script>
 
 <AppHead title="Home" />
@@ -40,6 +47,6 @@
     <div
         class="relative min-h-screen flex-1 rounded-xl border border-sidebar-border/70 md:min-h-min dark:border-sidebar-border"
     >
-        <Statement />
+        <Statement {transactions} />
     </div>
 </div>

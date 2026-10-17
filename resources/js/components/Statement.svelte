@@ -7,12 +7,12 @@
 
     let selectedTab = $state("all");
 
-    const transaction = {
-        value: 38500,
-        description: "Pix enviado",
-        from: "Marcelo Henrique de Freitas Almeida",
-        date: new Date('09/14/2026')
-    }
+    const { transactions = { data: [] } } = $props();
+
+    // Adicione esse efeito temporário para debugar no console do Google Chrome / Firefox
+    $effect(() => {
+        console.log("Dados recebidos do Laravel que chegaram no STATEMENT:", transactions);
+    });
 </script>
 
 <div class="flex-row w-full h-full">
@@ -45,8 +45,8 @@
         </Button>
     </div>
     <div class="flex-row w-full h-full bg-background">
-        <StatementCard {transaction} />
-        <StatementCard {transaction} />
-        <StatementCard {transaction} />
+        {#each transactions.data as transaction }
+            <StatementCard {transaction} />
+        {/each}
     </div>
 </div>

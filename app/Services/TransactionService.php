@@ -1,15 +1,19 @@
 <?php
 
+namespace App\Services;
+
 use App\Models\Transaction;
 use App\Models\User;
+use Illuminate\Pagination\CursorPaginator;
+
 
 class TransactionService 
 {
-    public function getTransactions(User $user, int $perPage): Transaction
+    public function getTransactions(User $user, int $perPage = 10): CursorPaginator
     {
         return Transaction::where("user_id", $user->id)
             ->orderBy("date", "desc")
-            ->paginate($perPage);
+            ->cursorPaginate($perPage);
     }
 
     public function createTransaction(User $user, array $data): Transaction
