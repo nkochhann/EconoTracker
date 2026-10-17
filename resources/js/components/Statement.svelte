@@ -6,9 +6,16 @@
     const unselected = "flex-1 w-full bg-background text-primary";
 
     let selectedTab = $state("all");
+
+    const transaction = {
+        value: 38500,
+        description: "Pix enviado",
+        from: "Marcelo Henrique de Freitas Almeida",
+        date: new Date('09/14/2026')
+    }
 </script>
 
-<div class="w-full h-full">
+<div class="flex-row w-full h-full">
     <div class="flex w-full">
         <!--All-->
         <Button 
@@ -38,6 +45,8 @@
         </Button>
     </div>
     <div class="flex-row w-full h-full bg-background">
-        <StatementCard />
+        <StatementCard {transaction} />
+        <StatementCard {transaction} />
+        <StatementCard {transaction} />
     </div>
 </div>

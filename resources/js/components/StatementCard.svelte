@@ -8,14 +8,14 @@
  * @property string $from
  * @property DateTime $date
  */
-    const transaction = {
-        value: 38500,
-        description: "Pix enviado",
-        from: "Marcelo Henrique de Freitas Almeida",
-        date: new Date('09/14/2026')
+    const { transaction } = $props();
+
+    function defineColor(): string
+    {
+        return transaction.value > 0 ? "#00a63e" : "#e7000b"
     }
 
-    const cardColor = transaction.value > 0 ? "#00a63e" : "#e7000b";
+    const cardColor = defineColor();
 
     function parseValue(value: number): string
     {
@@ -24,7 +24,7 @@
 
 </script>
  
-<Card.Root class="w-full h-20 max-w-none">
+<Card.Root class="flex w-full h-18 max-w-none justify-center pt-11">
     <Card.Header>
         <Card.Title class="text-base">{transaction.from}</Card.Title>
         <Card.Description class="text-sm">{transaction.description}</Card.Description>
