@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('from', 255)->nullable(true);
             $table->string('description', 255)->nullable(true);
             $table->integer('value');
-            $table->timestamp('date');
+            $table->timestamp('date')->useCurrent();
         });
     }
 

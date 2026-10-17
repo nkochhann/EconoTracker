@@ -20,6 +20,7 @@ class Transaction extends Model
     use HasFactory;
 
     protected $fillable = ['value', 'description', 'from', 'date'];
+    public $timestamps = false;
 
     protected function casts(): array
     {
