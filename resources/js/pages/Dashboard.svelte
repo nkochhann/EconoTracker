@@ -15,6 +15,7 @@
     import AppHead from '@/components/AppHead.svelte';
     import PlaceholderPattern from '@/components/PlaceholderPattern.svelte';
     import Statement from '@/components/Statement.svelte';
+    import Button from '@/components/ui/button/Button.svelte'
 
     const { transactions } = $props();
 
@@ -45,8 +46,11 @@
         </div>
     </div>
     <div
-        class="relative min-h-screen flex-1 rounded-xl border border-sidebar-border/70 md:min-h-min dark:border-sidebar-border"
+        class="relative mt-10 min-h-screen flex-1 rounded-xl border border-sidebar-border/70 md:min-h-min dark:border-sidebar-border"
     >
+        <div class="absolute -top-10 right-1">
+            <Button />
+        </div>
         <Statement {transactions} />
     </div>
 </div>
